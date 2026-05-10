@@ -21,9 +21,6 @@ h2 {
 .negrita {
   font-weight: 600;
 }
-.boton-text {
-  font-size: 30px; 
-}
 /******* FIN FUENTES *******/
 
 /* COLORES DE FONDO */
@@ -95,7 +92,7 @@ header {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.85);
   padding: 1.5rem 2rem;
-  border-radius: 16px;
+  border-radius: 18px;
   color: #1e2a1c;
   font-weight: 500;
   backdrop-filter: blur(2px);
@@ -115,17 +112,14 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  /*background-color: #E07B5F;*/
   background-color: #6bbf59;
   transition: transform 0.2s ease, background-color 0.2s ease;
   margin: 1rem 0;
-  
 }
 
 .landing-boton a {
-  color: white;
-  font-weight: bold;
-  font-size: 1.3rem;
+  color: black;
+  font-size: 1.5rem;
   display: block;
   width: 100%;
   text-align: center;
@@ -136,16 +130,16 @@ header {
   transform: scale(1.02);
   color: white;
 }
+.landing-boton:hover a {
+  color: white;
+}
 /* Botón "Añadir al carrito" */
 .boton-add-carrito {
   border: none;
   background-color: #6bbf59;
-  font-size: 16px;
+  font-size: 18px;
   border-radius: 50px;
 }
-
-
-
 
 /*** migas de pan ***/
 .breadcrump {
@@ -258,7 +252,7 @@ body.cart-visible {
   position: relative;
   cursor: pointer;
 }
-.cart-count {
+.cart-count {/*contador carrito*/
   position: absolute;
   top: -8px;
   right: -8px;
@@ -274,8 +268,6 @@ body.cart-visible {
   align-items: center;
   padding: 2px;
 }
-
-/***fin contador carrito*/
 
 /* Footer */
 footer {
@@ -319,10 +311,6 @@ footer {
   
   .landing-boton {
     padding: 0.5rem 1.5rem;
-  }
-  
-  .landing-boton a {
-    font-size: 1.1rem;
   }
   
   /* carrito responsivo */
