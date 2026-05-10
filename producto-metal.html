@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido a HappyPET</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <header class="principal">
+      <a href="index.html"><img src="img/logo.png" height="110" width="110" alt="logo" /></a>      
+      <div class="header-titulo">
+         <h1>Happy PET</h1>
+         <div class="header-titulo2">
+            <h2 class="centrar">Pequeños gestos, grandes huellas.</h2>
+            <button id="cart-toggle" class="button-carrito">
+             <img src="img/carrito2.png" height="30" width="30" alt="carrito">
+           </button>
+        </div>
+      </div>
+    </header>
+
+  <p  class="breadcrump"><a href="index.html">Inicio</a> &gt;<a href="tienda.html"> tienda &gt;</a> <a class="negrita" href="#">producto</a></p>
+  <div class="contenedor-detalle">
+    <div class="product">
+      <div class="product_image">
+        <img src="img/producto-metal.png" alt="Producto" />
+      </div>
+      
+    </div>
+    <div class="product">
+      <div class="product-info">
+        <h3>Dispensador de metal</h3>
+        <p class="product-precio">Precio: 120 €</p>
+        <button onclick="addToCart(4, 'Dispensador de metal', 120)" class="boton-add-carrito">Añadir al carrito</button>
+      </div>
+      <p class="producto-descripcion">Dispensador de metal, diseñado para exteriores. Tamaño único.</p>
+      <p class="producto-descripcion">Es resistente a las inclemencias del tiempo, tanto lluvia como calor. De acero inoxidable.</p>
+    
+    </div>
+  </div><!--fin elemento contenedor productos -->
+  
+<!-- CARRITO -->
+  <div id="cart-container">
+    <h2>Carrito</h2>
+    <ul id="cart"></ul>
+    <p id="total"></p>
+    <button id="buy-button" class="button-style">Comprar</button><!-- botón para comprar en el carrito -->
+  </div>
+ <!-- FIN CARRITO -->
+ <footer class="principal">
+  <div class="footer-contenedor principal">
+    <div class="footer-redes">
+      <a href="#"><img src="img/instagram.png" width="40" height="40" alt="instagram"/></a>
+      <a href="#"><img src="img/Xlogo.png" width="40" height="40" alt="X" /></a>
+      <a href="#"><img src="img/bluesky.png" width="40" height="40" alt="bluesky" /></a>
+      <a href="#"><img src="img/tiktok.png" width="40" height="40" alt="tiktok" /></a>
+    </div>
+  </div>
+  <p class="footer-creditos">© 2026 · Mónica Afán de Ribera</p>
+</footer>
+
+    <!-- Aquí va Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="script.js"></script>
+</body>
+</html>

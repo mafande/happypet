@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pago completado</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <header class="principal">
+      <a href="index.html"><img src="img/logo.png" height="110" width="110" alt="logo" /></a>      
+      <div class="header-titulo">
+         <h1>Happy PET</h1>
+         <div class="header-titulo2">
+            <h2 class="centrar">Pequeños gestos, grandes huellas.</h2>
+        </div>
+      </div>
+    </header>
+  <p  class="breadcrump"><a href="index.html">Inicio</a> &gt; <a href="tienda.html">tienda</a> &gt; <a class="negrita" href="#">pago completado</a></p>
+  <div class="cancel-success">
+      <h2>✅ ¡Pago realizado con éxito!</h2>
+      <p>Gracias por tu compra.</p>
+
+      <h2>Resumen del pedido</h2>
+      <ul id="order-list"></ul>
+      <p id="order-total"></p>
+  </div>
+<script>
+  
+  document.addEventListener("DOMContentLoaded", function () {
+  const order = JSON.parse(localStorage.getItem("lastOrder")) || [];
+  const list = document.getElementById("order-list");
+  const totalEl = document.getElementById("order-total");
+
+  let total = 0;
+
+  order.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} x${item.quantity} — ${item.price * item.quantity} €`;
+    list.appendChild(li);
+
+    total += item.price * item.quantity;
+  });
+
+  totalEl.textContent = "Total pagado: " + total + " €";  
+<!-- para vaciar el carrito después de comprar -->
+  localStorage.removeItem("cart");
+  });
+</script>
+    <!-- hasta aqui -->
+  <a class="breadcrump" href="index.html">Volver</a>
+<footer class="principal">
+  <div class="footer-contenedor principal">
+    <div class="footer-redes">
+      <a href="#"><img src="img/instagram.png" width="40" height="40" alt="instagram"/></a>
+      <a href="#"><img src="img/Xlogo.png" width="40" height="40" alt="X" /></a>
+      <a href="#"><img src="img/bluesky.png" width="40" height="40" alt="bluesky" /></a>
+      <a href="#"><img src="img/tiktok.png" width="40" height="40" alt="tiktok" /></a>
+    </div>
+  </div>
+  <p class="footer-creditos">© 2026 · Mónica Afán de Ribera</p>
+</footer>
+</body>
+</html>
