@@ -130,11 +130,13 @@ header {
   color: white;
 }
 /* fin botón "Ir a tienda" */
+
 /* Botón "Añadir al carrito" */
 .boton-add-carrito {
   border: none;
   font-size: 18px;
   border-radius: 50px;
+  color:black;
 }
 
 /* migas de pan */
