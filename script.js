@@ -7,6 +7,9 @@ const stripe = Stripe("pk_test_51Ssj5FF4dVY3vbmSIitzraqbkvCGC498HASTU18POkQGDUhh
 const cartToggle = document.getElementById("cart-toggle");
 const cartContainer = document.getElementById("cart-container");
 
+// Evita que los clics dentro del carrito cierren el menú
+cartContainer.addEventListener("click", (e) => e.stopPropagation());
+
 // Muestra/ oculta el carrito en móvil
 cartToggle.addEventListener("click", () => {
   cartContainer.classList.toggle("open");
@@ -130,7 +133,7 @@ document.getElementById("buy-button").addEventListener("click", async () => {
 
 });
 
-/******** FUNCIONES ********/
+/******** RESTO DE FUNCIONES ********/
 // Añadir producto
 function addToCart(id, name, price) {
   const product = cart.find(item => item.id === id);
@@ -180,7 +183,6 @@ function renderCart() {
 
 // Borrar solo 1 unidad
 function removeOne(id) {
-
   const product = cart.find(item => item.id === id);
 
   if (!product) return;
@@ -197,7 +199,6 @@ function removeOne(id) {
 
 // Borrar producto completo
 function removeItem(id) {
-
   cart = cart.filter(item => item.id !== id);
 
   saveCart();
@@ -208,19 +209,6 @@ function removeItem(id) {
 function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
-
-
-/*
-// Vaciar carrito completo
-function clearCart() {
-
-  localStorage.removeItem("cart");
-
-  cart = [];
-
-  renderCart();
-}
-*/
 
 // Al cargar la página
 window.addEventListener("load", () => {
