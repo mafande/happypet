@@ -4,13 +4,13 @@ const cors = require("cors");
 
 const app = express();
 
-// ✅ usar variable de entorno
+//usar variable de entorno
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
 app.use(cors());
 app.use(express.json());
 
-// ✅ servir frontend (si lo tienes en /public)
+//servir frontend 
 app.use(express.static(__dirname));
 
 // página principal
@@ -36,7 +36,7 @@ app.post("/create-checkout-session", async (req, res) => {
         quantity: item.quantity
       })),
 
-      // ⚠️ IMPORTANTE: usar dominio dinámico
+      //dominio dinámico
       success_url: `${req.headers.origin}/success.html`,
       cancel_url: `${req.headers.origin}/cancel.html`
     });
@@ -49,7 +49,7 @@ app.post("/create-checkout-session", async (req, res) => {
   }
 });
 
-// ✅ usar puerto dinámico
+//puerto dinámico
 const PORT = process.env.PORT || 4242;
 
 app.listen(PORT, '0.0.0.0', () => {
