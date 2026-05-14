@@ -1,6 +1,5 @@
 /*      FUENTES     */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
@@ -23,12 +22,11 @@ h2 {
 }
 /******* FIN FUENTES *******/
 
-/* COLORES DE FONDO */
-.principal {
+/* color de fondo */
+.principal {/*se usa en el header, footer y botones*/
   background-color: #6bbf59;
 }
 
-/*fin colores de fondo */
 /*  ENLACES   */
 a {
   text-decoration: none;
@@ -75,7 +73,6 @@ header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -112,7 +109,6 @@ header {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background-color: #6bbf59;
   transition: transform 0.2s ease, background-color 0.2s ease;
   margin: 1rem 0;
 }
@@ -126,22 +122,22 @@ header {
 }
 
 .landing-boton:hover, .boton-add-carrito:hover {
-  background-color: #c55c3e;
+  background-color: #994730;
   transform: scale(1.02);
   color: white;
 }
 .landing-boton:hover a {
   color: white;
 }
+/* fin botón "Ir a tienda" */
 /* Botón "Añadir al carrito" */
 .boton-add-carrito {
   border: none;
-  background-color: #6bbf59;
   font-size: 18px;
   border-radius: 50px;
 }
 
-/*** migas de pan ***/
+/* migas de pan */
 .breadcrump {
   padding: 1rem 0 0 3rem;
 }
@@ -222,7 +218,7 @@ body.cart-visible {
   font-weight: bold;
   margin-bottom: 1.5rem;
 }
-.cancel-success {
+.cancel-success {/*para el div de la página de cancel y success*/
   padding: 1.5rem;
   background-color: white;
   display: flex;
@@ -233,26 +229,27 @@ body.cart-visible {
   align-items: center;
 }
 
-/* Botón */
+/* Botón de comprar*/
 .button-style {
   border: none;
-  padding: 1rem 2rem;
+  padding: 0.7rem 1rem;
   font-size: 1rem;
-  border-radius: 6px;
   cursor: pointer;
+  border-radius: 50px;
 }
 
 .button-style:hover {
-  opacity: 0.9;
+  background-color: #994730;
   font-weight: 600;
+  color: white;
 }
-.button-carrito {
+.button-carrito {/*para el icono del carrito de la compra*/
   border: none;
   background: none;
   position: relative;
   cursor: pointer;
 }
-.cart-count {/*contador carrito*/
+.cart-count {/*contador del carrito*/
   position: absolute;
   top: -8px;
   right: -8px;
@@ -297,7 +294,7 @@ footer {
     padding: 0;
   }
   
-  /* Ajustes para el nuevo landing responsive */
+  /* Ajustes para landing responsive */
   .landing {
     padding: 2rem 1.5rem;
     min-height: 60vh;
@@ -313,7 +310,7 @@ footer {
     padding: 0.5rem 1.5rem;
   }
   
-  /* carrito responsivo */
+  /* carrito responsive */
   #cart-container {
     position: fixed;
     right: -100%;
@@ -339,8 +336,7 @@ footer {
   body.cart-visible {
     margin-right: 0;
   }
-  
-  /* otros ajustes responsivos existentes */
+
   .contenedor-productos {
     flex-direction: column;
   }
